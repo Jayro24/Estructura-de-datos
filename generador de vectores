@@ -1,0 +1,24 @@
+import random
+
+def generar_vectores(num_vectores=5, dimension=3, rango=(0, 10)):
+    """
+    Genera una lista de vectores aleatorios.
+
+    Parámetros:
+    - num_vectores: número de vectores a generar
+    - dimension: número de componentes por vector
+    - rango: tupla (min, max) para los valores aleatorios
+
+    Retorna:
+    - Lista de vectores (listas de números)
+    """
+    vectores = []
+    for _ in range(num_vectores):
+        vector = [random.uniform(rango[0], rango[1]) for _ in range(dimension)]
+        vectores.append(vector)
+    return vectores
+
+# Ejemplo de uso
+vectores_generados = generar_vectores(num_vectores=4, dimension=2, rango=(-5, 5))
+for i, v in enumerate(vectores_generados, 1):
+    print(f"Vector {i}: {v}")
